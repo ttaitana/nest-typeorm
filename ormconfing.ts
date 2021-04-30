@@ -5,11 +5,11 @@ const config: PostgresConnectionOptions = {
   host: 'localhost',
   port: 5432,
   username: 'postgres',
-  password: '123456',
+  password: '147258',
   database: 'nest-typeorm',
   synchronize: true,
   logging: false,
-  entities: ['dist/src/**/*.entity.ts'],
+  entities: ['dist/**/*.entity.js'],
 };
 
 export default config;
