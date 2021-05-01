@@ -36,7 +36,7 @@ describe('BookingController', () => {
 
   it('should create booking', () => {
     const dto = {
-      hotelName: 'HODHotel',
+      hotelId: 1,
       roomNumber: 'P-012',
       name: 'Tanachai',
       bookingDate: new Date(Date.now()),
@@ -49,7 +49,7 @@ describe('BookingController', () => {
 
   it('should update booking', () => {
     const dto = {
-      hotelName: 'HODHotel-Patiphat',
+      hotelId: 1,
       roomNumber: 'P-011',
       name: 'Tanachai Saetung',
       bookingDate: new Date(Date.now()),

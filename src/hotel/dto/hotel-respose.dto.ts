@@ -1,20 +1,20 @@
-import { IsDate, IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class CreateBookingDto {
+export class HotelResponseDto {
   @ApiProperty()
   @IsNumber()
   hotelId: number;
 
   @ApiProperty()
   @IsString()
-  roomNumber: string;
+  hotelName: string;
 
   @ApiProperty()
   @IsString()
-  name: string;
+  address: string;
 
   @ApiProperty()
-  @IsDate()
-  bookingDate: Date;
+  @IsString()
+  email: string;
 }

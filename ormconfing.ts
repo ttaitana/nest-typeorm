@@ -5,7 +5,7 @@ const config: PostgresConnectionOptions = {
   host: 'localhost',
   port: 5432,
   username: 'postgres',
-  password: '147258',
+  password: '123456',
   database: 'nest-typeorm',
   synchronize: true,
   logging: false,
