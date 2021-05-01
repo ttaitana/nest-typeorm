@@ -1,15 +1,15 @@
-import { IsDate, IsNumber, IsString } from 'class-validator';
+import { IsDate, IsNumber, IsObject, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { Hotel } from 'src/hotel/entities/hotel.entity';
+import { HotelResponseDto } from 'src/hotel/dto/hotel-respose.dto';
 
 export class BookingResponseDto {
   @ApiProperty()
   @IsNumber()
   id: number;
 
-  @ApiProperty()
-  @IsString()
-  hotel: Hotel;
+  @ApiProperty({ type: HotelResponseDto })
+  @IsObject()
+  hotel: HotelResponseDto;
 
   @ApiProperty()
   @IsString()
@@ -20,6 +20,7 @@ export class BookingResponseDto {
   name: string;
 
   @ApiProperty()
-  @IsDate()
-  bookingDate: Date;
+  // @IsDate()
+  @IsString()
+  bookingDate: string;
 }

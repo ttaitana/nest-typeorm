@@ -3,7 +3,7 @@ import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
 
   const option = new DocumentBuilder()
     .setTitle('nest-orm-playground')
@@ -17,6 +17,7 @@ async function bootstrap() {
 
   SwaggerModule.setup(`swagger`, app, document);
 
+  app.enableCors();
   await app.listen(3000);
 }
 bootstrap();

@@ -1,10 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
+import { HotelService } from 'src/hotel/hotel.service';
 import { BookingService } from './booking.service';
 import { Booking } from './entities/booking.entity';
 
 describe('BookingService', () => {
   let service: BookingService;
+  let secService: HotelService;
   const mockBookingRepository = {
     create: jest.fn().mockImplementation((dto) => dto),
     save: jest
@@ -34,10 +36,10 @@ describe('BookingService', () => {
 
   it('should create new booking and return that.', async () => {
     const dto = {
-      hotelName: 'HODHotel',
+      hotelId: 1,
       roomNumber: 'P-012',
       name: 'Tanachai',
-      bookingDate: new Date(Date.now()),
+      bookingDate: Date.now().toString(),
     };
     expect(await service.create(dto)).toEqual({
       id: expect.any(Number),

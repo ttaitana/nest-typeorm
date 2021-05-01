@@ -26,7 +26,9 @@ export class BookingService {
 
   async findOne(id: number) {
     try {
-      const booking = await this.bookingRepository.findOneOrFail(id);
+      const booking = await this.bookingRepository.findOneOrFail(id, {
+        relations: ['hotel'],
+      });
       return booking;
     } catch (error) {
       throw new HttpException(error.message, HttpStatus.BAD_REQUEST);

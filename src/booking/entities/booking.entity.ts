@@ -12,8 +12,8 @@ export class Booking {
   @Column()
   name: string;
 
-  @Column({ type: 'timestamp', nullable: true })
-  bookingDate: Date;
+  @Column({ nullable: true })
+  bookingDate: string;
 
   @ManyToOne((type) => Hotel, (hotel) => hotel.booking)
   hotel: Hotel;

@@ -15,6 +15,5 @@ export class CreateBookingDto {
   name: string;
 
   @ApiProperty()
-  @IsDate()
-  bookingDate: Date;
+  bookingDate: string;
 }
